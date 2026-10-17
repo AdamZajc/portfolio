@@ -9,5 +9,4 @@ require('express')()
             console.log(`MongoDB connected: ${con.connection.host}`);
         });
         console.log(`Server running on port ${process.env.PORT}`);
-        console.log(require('jsonwebtoken').sign("ABC", process.env.JWT_SECRET))
     })

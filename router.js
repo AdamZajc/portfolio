@@ -1,4 +1,4 @@
-const {getAllPosts, getPost} = require("./controllers/posts");
+const {getAllPosts, getPost, addPost, updatePost, deletePost} = require("./controllers/posts");
 const router = require("express").Router();
 
 async function secure(req, res, next) {
@@ -13,7 +13,7 @@ async function secure(req, res, next) {
     }
 }
 
-router.route('/posts').get(secure, getAllPosts)
-router.route('/posts/:slug').get(secure, getPost)
+router.route('/posts').get(getAllPosts).post(secure, addPost);
+router.route('/posts/:slug').get(secure, getPost).put(secure, updatePost).delete(secure, deletePost);
 
 module.exports = router;
