@@ -8,7 +8,7 @@ app.prepare().then(() => {
         .use(require('express').json())
         .use(require('express').urlencoded({ extended: true }))
         .use('/api', require('./router'))
-        .all(/^.*$/, (req, res) => {
+        .use(/^.*$/, (req, res) => {
             return app.getRequestHandler()(req, res);
         })
         .listen(process.env.PORT || 3000, async () => {

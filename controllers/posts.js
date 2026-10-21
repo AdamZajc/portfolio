@@ -2,11 +2,11 @@ const Post = require('../models/post');
 
 module.exports = {
     getAllPosts: async function (req, res) {
-        const posts = await Post.find();
+        const posts = await Post.find().select('-_id -__v -updatedAt');
         return res.status(200).json(posts);
     },
     getPost: async function (req, res) {
-        const post = await Post.findOne({slug: req.params.slug});
+        const post = await Post.findOne({slug: req.params.slug}).select('-_id -__v -updatedAt');;
         return res.status(200).json(post);
     },
     addPost: async function (req, res) {

@@ -14,6 +14,6 @@ async function secure(req, res, next) {
 }
 
 router.route('/posts').get(getAllPosts).post(secure, addPost);
-router.route('/posts/:slug').get(secure, getPost).put(secure, updatePost).delete(secure, deletePost);
+router.route('/posts/:slug').get(getPost).put(secure, updatePost).delete(secure, deletePost);
 
 module.exports = router;
