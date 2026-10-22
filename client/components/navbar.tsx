@@ -1,6 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 function NavLink({ href, text }: { href: string, text: string }) {
     return <Link href={href} className={"text-lg font-thin uppercase group"}>
@@ -23,7 +26,7 @@ export default function Navbar() {
     })
 
     return <nav className={`absolute left-20 right-20 top-10 grid grid-cols-4`}>
-            <div className={"flex items-center text-2xl"}><h1>@/2</h1></div>
+            <div className={"flex items-center text-2xl " + montserrat.className}><h1>@/2</h1></div>
             <div className={"flex items-center gap-12 col-span-2 justify-center"}>
                 {mobile ? <div>
 

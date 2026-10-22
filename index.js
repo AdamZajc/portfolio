@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const app = require('next')({ dev: process.env.NODE_ENV !== "production", dir: "./client" })
+const app = require('next')({ dev: process.env.NODE_ENV !== "production", dir: __dirname+"/client" })
 
 app.prepare().then(() => {
     require('express')()
