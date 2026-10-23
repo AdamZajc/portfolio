@@ -15,7 +15,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "npm run build --prefix client && nodemon index.js"
+    "test": "concurrently \"nodemon index.js\" \"npm run dev --prefix client\""
   },
   "devDependencies": {
     "concurrently": "^10.0.6",

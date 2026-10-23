@@ -25,7 +25,7 @@ export default function Navbar() {
         }
     })
 
-    return <nav className={`absolute left-20 right-20 top-10 grid grid-cols-4`}>
+    return <nav className={`absolute left-20 right-20 top-10 grid grid-cols-4 z-50 text-white`}>
             <div className={"flex items-center text-2xl " + montserrat.className}><h1>@/2</h1></div>
             <div className={"flex items-center gap-12 col-span-2 justify-center"}>
                 {mobile ? <div>
