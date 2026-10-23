@@ -5,7 +5,7 @@ import {useCallback} from "react";
 
 export default function PhotoChip() {
     const rand = useCallback(() => Math.random(), []);
-    const img = gallery[Math.floor(rand() * gallery.length)];
+    const img = gallery[Math.round(rand() * (gallery.length - 1))];
 
     return <motion.div
         className={"w-full h-80 mt-6 -z-50"}

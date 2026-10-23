@@ -31,6 +31,6 @@ export default function Home() {
         </div>
       <div className={"absolute top-0 left-0 right-0 h-screen w-full bg-[rgba(0,0,0,0.5)]"}/>
     </section>
-    abbbb
+    <section className={"h-screen"}></section>
   </main>
 }
