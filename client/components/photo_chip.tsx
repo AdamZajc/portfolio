@@ -8,9 +8,9 @@ export default function PhotoChip() {
     const img = gallery[Math.round(rand() * (gallery.length - 1))];
 
     return <motion.div
-        className={"w-full h-80 mt-6 -z-50"}
+        className={"w-full h-[45vh] mt-6 -z-50"}
         style={{
-            background: `url("${img}")`,
+            backgroundImage: `url("${img}")`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",

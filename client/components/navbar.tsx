@@ -8,14 +8,14 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 function NavLink({ href, text }: { href: string, text: string }) {
     return <Link href={href} className={"text-lg font-thin uppercase group"}>
         {text}
-        <div className={"w-0 h-px bg-black group-hover:w-full"} />
+        <div className={"w-0 h-px bg-white group-hover:w-full"} />
     </Link>
 }
 
 export default function Navbar() {
     const [mobile, setMobile] = useState<boolean>(true)
 
-    function handleResize() { window.innerWidth <= 768 ? setMobile(true) : setMobile(false) }
+    function handleResize() { window.innerWidth <= 1024 ? setMobile(true) : setMobile(false) }
 
     useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -28,8 +28,8 @@ export default function Navbar() {
         }
     })
 
-    return <nav className={`absolute left-20 right-20 top-10 grid grid-cols-4 z-50`}>
-            <div className={"flex items-center text-2xl " + montserrat.className}><h1>@/2</h1></div>
+    return <nav className={`absolute left-20 right-20 top-10 grid grid-cols-4 z-50 text-white`}>
+            <div className={"flex items-center text-2xl " + montserrat.className}><h1>PageTitle</h1></div>
             <div className={"flex items-center gap-12 col-span-2 justify-center"}>
                 {mobile ? <div>
 

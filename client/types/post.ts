@@ -6,4 +6,5 @@ type Post = {
     categories: string[];
     background_image: string;
     content: string;
+    createdAt: Date;
 }
