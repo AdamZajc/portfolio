@@ -29,7 +29,12 @@ export default function Navbar() {
     })
 
     return <nav className={`absolute left-20 right-20 top-10 grid grid-cols-4 z-50 text-white`}>
-            <div className={"flex items-center text-2xl " + montserrat.className}><h1>PageTitle</h1></div>
+            <Link href={"/"} className={"flex items-center text-2xl " + montserrat.className}>
+                <h1>
+                    univise_works
+                    <sup className={"text-sky-600 ml-1"}>&#9679;</sup>
+                </h1>
+            </Link>
             <div className={"flex items-center gap-12 col-span-2 justify-center"}>
                 {mobile ? <div>
 

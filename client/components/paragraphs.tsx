@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 type IType = "paragraph" | "heading" | "link" | "image" | "video" | "list" | "code";
-type Props = { text?: string; href?: string; src?: string; heading?: string; items?: any[]; };
+type Props = { text?: string; href?: string; src?: string; heading?: string; items?: string[]; };
 
 function Paragraph({ text }: any) {
-    return <p>{text}</p>
+    return <p className={"text-justify"}>{text}</p>
 }
 
 function ILink({ text, href }: any) {
-    return <Link href={href} className={"text-sky-400 hover:text-sky-300"}>{text}</Link>
+    return <Link href={href} className={"text-sky-400 hover:text-sky-300"} target={"_blank"}>{text}</Link>
 }
 
 function Image({ src }: any) {
@@ -22,22 +22,22 @@ function Video({ src }: any) {
 function Heading({ text, heading }: any) {
     switch (heading) {
         case "1":
-            return <h1 className={"text-2xl font-bold"}>{text}</h1>
+            return <h1 className={"text-3xl font-bold text-justify"}>{text}</h1>
         case "2":
-            return <h2 className={"text-xl font-bold"}>{text}</h2>
+            return <h2 className={"text-2xl font-bold text-justify"}>{text}</h2>
         case "3":
-            return <h3 className={"text-lg font-bold"}>{text}</h3>
+            return <h3 className={"text-xl font-bold text-justify"}>{text}</h3>
         case "4":
-            return <h4 className={"text-base font-bold"}>{text}</h4>
+            return <h4 className={"text-lg font-bold text-justify"}>{text}</h4>
         case "5":
-            return <h5 className={"text-sm font-bold"}>{text}</h5>
+            return <h5 className={"text-base font-bold text-justify"}>{text}</h5>
     }
 }
 
 function List({ items }: any) {
-    return <div className={"ml-8"}>
-        {items.map((item: any, index: number) => {
-            return <PostItem type={item.type} props={item} key={index} />
+    return <div>
+        {items.map((item: string, index: number) => {
+            return  <div className={"ml-2 flex"} key={index} ><p className={"mr-4"}>&#8211;</p><Paragraph text={item}/></div>
         })}
     </div>
 }
