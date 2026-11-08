@@ -16,10 +16,14 @@ function Image({ src }: any) {
 }
 
 function Video({ src }: any) {
- return <div></div>
+ return <iframe className={"w-full h-[80vh]"} src={src}
+                title="Video Player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen />
 }
 
-function Heading({ text, heading }: any) {
+function Heading({text, heading}: any) {
     switch (heading) {
         case "1":
             return <h1 className={"text-3xl font-bold text-justify"}>{text}</h1>

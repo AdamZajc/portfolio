@@ -7,3 +7,13 @@ export const gallery = [
     'https://images.pexels.com/photos/37021550/pexels-photo-37021550.jpeg',
     'https://images.pexels.com/photos/39222484/pexels-photo-39222484.jpeg'
 ]
+
+export const testimonials = [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+]

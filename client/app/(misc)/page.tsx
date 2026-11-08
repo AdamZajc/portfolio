@@ -1,6 +1,8 @@
 'use client';
 import dynamic from "next/dynamic";
 import { Montserrat } from 'next/font/google'
+import {testimonials} from "@/data/store";
+import {useState} from "react";
 
 const PhotoChip = dynamic(() => import('@/components/photo_chip'), {
   ssr: false,
@@ -9,6 +11,13 @@ const PhotoChip = dynamic(() => import('@/components/photo_chip'), {
 const montserrat = Montserrat({ subsets: ["latin"] })
 
 export default function Home() {
+  const [testimonial, setTestimonial] = useState<number>(0)
+
+  setInterval(() => {
+    if ((testimonial + 1) < (testimonials.length - 5)) setTestimonial(testimonial + 1)
+    else setTestimonial(0)
+  }, 2500)
+
   return <main>
     <section id="welcome" className={"h-screen w-full overflow-y-hidden grid xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-6"}>
       <div className="-mt-24">
@@ -36,6 +45,14 @@ export default function Home() {
         <h1 className={"text-4xl text-white font-semibold " + montserrat.className}>Technology, Society & Responsibility...</h1>
       </div>
     </section>
-    <section className={"h-screen"}></section>
+    <section className={"h-screen"} id={"about"}></section>
+    <section className={"h-screen overflow-hidden"} id={"testimonials"}>
+      <div className={"h-96 w-fit flex gap-8 py-4 px-8"}>
+        {testimonials.map((t, index) => {
+          return <div className={"w-80 h-full bg-slate-50 shadow-lg p-8"} key={index}></div>
+        })}
+      </div>
+    </section>
+    <section className={"h-screen"} id={"contact"}></section>
   </main>
 }

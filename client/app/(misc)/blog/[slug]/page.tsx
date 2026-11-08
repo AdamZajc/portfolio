@@ -8,7 +8,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
     const post = await axios.get('http://localhost:3001/api/posts/'+slug).then(res => res.data)
 
     return <main>
-        <Suspense fallback={<></>}>
+        <Suspense>
             <header className={"w-full h-[75vh] grid place-content-center text-white text-center gap-2"}
                     style={{
                         background: `url("${post.background_image}"), rgba(0,0,0,0.65)`,
