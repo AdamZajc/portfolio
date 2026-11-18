@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+*{
+  transition: all .3s ease;
+}
+
+.loader {
+  animation: load 4s linear infinite;
+  animation-delay: calc(random(0,1) * 4s)
+}
+
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
