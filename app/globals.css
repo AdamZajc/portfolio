@@ -9,6 +9,10 @@
   animation-delay: calc(random(0,1) * 4s)
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes load {
   0% {
     opacity: 1;
